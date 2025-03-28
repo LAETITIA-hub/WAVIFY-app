@@ -24,4 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
   
     fetchSongs();
     fetchJams();
-  
+    searchBar.addEventListener("input", async () => {
+        const songs = await fetchSongsData();
+        const query = searchBar.value.toLowerCase();
+        const filteredSongs = songs.filter(
+          song =>
+            song.title.toLowerCase().includes(query) ||
+            song.artist.toLowerCase().includes(query) ||
+            song.lyrics.toLowerCase().includes(query) ||
+            song.genre.toLowerCase().includes(query)
+        );
+        displaySongs(filteredSongs);
+      });
+    
