@@ -47,3 +47,34 @@
       "imageUrl": "images/reflections.jpeg"
     }
   ],
+  "jams": [
+    {
+      "id": "1",
+      "imageUrl": "images/playlist 6.jpeg",
+      "name": "Late Night Vibes",
+      "creator": "Sharky",
+      "participants": [
+        "Sharky",
+        "CurrentUser"
+      ],
+      "songIds": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": "2",
+      "imageUrl": "images/playlist5.jpg",
+      "name": "Chill Beats",
+      "creator": "Chunkz",
+      "participants": [
+        "Chunkz",
+        "CurrentUser"
+      ],
+      "songIds": [
+        2,
+        5
+      ]
+    }
+  ]
+}
