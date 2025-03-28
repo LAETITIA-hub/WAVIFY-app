@@ -119,5 +119,33 @@ document.addEventListener("DOMContentLoaded", () => {
           `;
           jamsContainer.appendChild(jamDiv);
         });
-             
+        document.querySelectorAll(".join-btn").forEach(button => {
+            button.addEventListener("click", handleJoinJam);
+          });
+        }
+      
+        async function handleJoinJam(event) {
+          const jamId = event.target.getAttribute("data-jam-id");
+          try {
+            const response = await fetch(`http://localhost:3000/jams/${jamId}`);
+            const jam = await response.json();
+      
+            if (!jam.participants.includes(currentUser)) {
+              jam.participants.push(currentUser);
+              await fetch(`http://localhost:3000/jams/${jamId}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(jam)
+              });
+              alert(`Joined ${jam.name}!`);
+              fetchJams(); 
+              displayJamDetails(jam); 
+            } else {
+              alert("You're already in this jam!");
+            }
+          } catch (error) {
+            console.error("Error joining jam:", error);
+          }
+        }
+                  
     
