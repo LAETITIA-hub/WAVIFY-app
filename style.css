@@ -380,3 +380,12 @@ body.dark-mode .jam-card {
     margin-top: 20px;
     padding-left: 20px;
 }
+.playlist-card h3, .song-card h3, .jam-card h3 {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.song-card p, .jam-card p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+}
