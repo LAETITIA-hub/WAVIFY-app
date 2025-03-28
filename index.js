@@ -86,5 +86,38 @@ document.addEventListener("DOMContentLoaded", () => {
           songsContainer.appendChild(songDiv);
         });
       }
-          
+      async function fetchJamsData() {
+        try {
+          const response = await fetch("http://localhost:3000/jams");
+          if (!response.ok) throw new Error("Failed to fetch jams");
+          return await response.json();
+        } catch (error) {
+          console.error("Error fetching jams:", error);
+          jamsContainer.innerHTML = "<p>Error loading jams.</p>";
+          return [];
+        }
+      }
+    
+      function fetchJams() {
+        fetchJamsData().then(jams => displayJams(jams));
+      }
+    
+      function displayJams(jams) {
+        jamsContainer.innerHTML = "";
+        if (jams.length === 0) {
+          jamsContainer.innerHTML = "<p>No jams found.</p>";
+          return;
+        }
+        jams.forEach(jam => {
+          const jamDiv = document.createElement("div");
+          jamDiv.classList.add("jam-card");
+          jamDiv.innerHTML = `
+            <img src="${jam.imageUrl}" alt="${jam.name}">
+            <h3>${jam.name}</h3>
+            <p>Created by ${jam.creator}</p>
+            <button class="join-btn" data-jam-id="${jam.id}">Join Jam</button>
+          `;
+          jamsContainer.appendChild(jamDiv);
+        });
+             
     
