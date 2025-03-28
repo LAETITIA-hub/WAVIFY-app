@@ -36,4 +36,20 @@ document.addEventListener("DOMContentLoaded", () => {
         );
         displaySongs(filteredSongs);
       });
+      async function fetchSongsData() {
+        try {
+          const response = await fetch("http://localhost:3000/songs");
+          if (!response.ok) throw new Error("Failed to fetch songs");
+          return await response.json();
+        } catch (error) {
+          console.error("Error fetching songs:", error);
+          songsContainer.innerHTML = "<p>Error loading songs.</p>";
+          return [];
+        }
+      }
+    
+      function fetchSongs() {
+        fetchSongsData().then(songs => displaySongs(songs));
+      }
+        
     
