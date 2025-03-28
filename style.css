@@ -311,3 +311,21 @@ body.dark-mode {
     background-color: #181818; 
     color: #ffffff; 
 }
+songs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.song-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+
+body.dark-mode .song-card {
+    background-color: #282828;
+}
