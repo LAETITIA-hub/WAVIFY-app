@@ -147,5 +147,23 @@ document.addEventListener("DOMContentLoaded", () => {
             console.error("Error joining jam:", error);
           }
         }
-                  
+        async function displayJamDetails(jam) {
+            const songs = await fetchSongsData();
+            const jamSongs = songs.filter(song => jam.songIds.includes(song.id));
+            jamsContainer.innerHTML = `
+              <h2>${jam.name}</h2>
+              <p>Created by: ${jam.creator}</p>
+              <p>Participants: ${jam.participants.join(", ")}</p>
+              <h3>Songs:</h3>
+              <ul>
+                ${jamSongs.map(song => `<li>${song.title} by ${song.artist} <button class="join-btn" onclick="playSong('${song.url}')">Play</button></li>`).join("")}
+              </ul>
+            `;
+          }
+        
+          window.playSong = function (url) {
+            const audio = new Audio(url);
+            audio.play();
+          };
+      });                 
     
