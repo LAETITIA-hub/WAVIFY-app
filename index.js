@@ -51,5 +51,40 @@ document.addEventListener("DOMContentLoaded", () => {
       function fetchSongs() {
         fetchSongsData().then(songs => displaySongs(songs));
       }
-        
+      function displaySongs(songs) {
+        songsContainer.innerHTML = "";
+        if (songs.length === 0) {
+          songsContainer.innerHTML = "<p>No songs found.</p>";
+          return;
+        }
+        songs.forEach(song => {
+          const songDiv = document.createElement("div");
+          songDiv.classList.add("song-card");
+          
+          let imageUrl;
+          if (song.title === "No Pole") {
+            imageUrl = "images/don toliver.jpeg";
+          } else if (song.title === "Swim") {
+            imageUrl = "images/chase .jpeg";
+          } else if (song.title === "Never Lose Me") {
+            imageUrl = "images/flo.jpeg";
+          } else if (song.title === "She Will") {
+            imageUrl = "images/lil.jpeg";
+          } else if (song.title === "Reflections") {
+            imageUrl = "images/reflections.jpeg";
+          } else {
+            imageUrl = "images/default.jpg"; 
+          }
+  
+          songDiv.innerHTML = `
+            <img src="${imageUrl}" alt="${song.title}">
+            <h3>${song.title}</h3>
+            <p><strong>Artist:</strong> ${song.artist}</p>
+            <p><strong>Genre:</strong> ${song.genre}</p>
+            <button onclick="playSong('${song.url}')">Play</button>
+          `;
+          songsContainer.appendChild(songDiv);
+        });
+      }
+          
     
