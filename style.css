@@ -252,3 +252,62 @@ input:checked + .slider {
 input:checked + .slider:before {
     transform: translateX(26px);
 }
+body.dark-mode {
+    background-color: #181818;
+    color: #ffffff;
+    background-image: none; 
+}
+
+
+body.dark-mode .sidebar {
+    background: linear-gradient(90deg, #003366, #990033);
+}
+
+body.dark-mode .main-content {
+    background-color: #181818;
+}
+
+body.dark-mode .playlist-card,
+body.dark-mode .jam-card,
+body.dark-mode .song-card {
+    background-color: #282828;
+}
+
+body.dark-mode .music-player {
+    background-color: #101010;
+}
+
+body.dark-mode .nav-links a {
+    color: #ffffff;
+}
+
+body.dark-mode .nav-links a:hover {
+    color: #1db954;
+}
+
+body.dark-mode .search-bar input {
+    background-color: #282828;
+    color: #ffffff;
+    border-color: #404040;
+}
+
+
+  body.dark-mode {
+    background-color: #181818; 
+    color: #ffffff; 
+  }
+  
+  .songs-container, .jam-card, .playlist-card {
+    transition: background-color 0.3s;
+  }
+  
+  body.dark-mode .songs-container,
+  body.dark-mode .jam-card,
+  body.dark-mode .playlist-card {
+    background-color: #282828; 
+  }
+ 
+body.dark-mode {
+    background-color: #181818; 
+    color: #ffffff; 
+}
