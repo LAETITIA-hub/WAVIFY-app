@@ -1,0 +1,49 @@
+{
+
+  "songs": [
+    {
+      "id": "1",
+      "title": "No Pole",
+      "artist": "Don Toliver",
+      "genre": "Rap",
+      "lyrics": "scrape the bowl",
+      "url": "path/to/no pole.mp3",
+      "imageUrl": "images/don toliver.jpeg"
+    },
+    {
+      "id": "2",
+      "title": "Swim",
+      "artist": "Chase Atlantic",
+      "genre": "HipHop",
+      "lyrics": "the water's getting colder ",
+      "url": "path/to/swim.mp3",
+      "imageUrl": "images/chase .jpeg"
+    },
+    {
+      "id": "3",
+      "title": "Never Lose Me",
+      "artist": "Flo Milli",
+      "genre": "US beats",
+      "lyrics": "nver had a bih like me",
+      "url": "path/to/never lose me.mp3",
+      "imageUrl": "images/flo.jpeg"
+    },
+    {
+      "id": "4",
+      "title": "She Will",
+      "artist": "Lil Wayne",
+      "genre": "Rap",
+      "lyrics": "it's real",
+      "url": "path/to/she-will.mp3",
+      "imageUrl": "images/lil.jpeg"
+    },
+    {
+      "id": "5",
+      "title": "Reflections",
+      "artist": "The Neighbourhood",
+      "genre": "Rock",
+      "lyrics": "stars",
+      "url": "path/to/reflections.mp3",
+      "imageUrl": "images/reflections.jpeg"
+    }
+  ],
